@@ -26,4 +26,5 @@ class Command(BaseCommand):
 
         os.rename(folder_to_rename, new_project_name)
             
-  # self.stdout.write(self.style.SUCCESS('Project has been renamed to %s' % new_project_name))
+
+        self.stdout.write(self.style.SUCCESS('Project has been renamed to %s' % new_project_name))
