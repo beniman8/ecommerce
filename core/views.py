@@ -1,11 +1,10 @@
 from django.shortcuts import render
+from django.views.generic.list import ListView
 from .models import Item, Order,OrderItem
 
-# Create your views here.
 
 
-def item_list(request):
-    context = {
-        'items':Item.objects.all()
-    }
-    return render(request,"home-page.html",context)
+class HomeView(ListView):
+    model = Item
+    paginate_by = 10
+template_name = "home.html"
