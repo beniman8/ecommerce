@@ -1,2 +1,6 @@
+*.pyc
+__pycache__/
 static_in_env
+media_root
+static_root
 env
