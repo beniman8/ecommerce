@@ -54,3 +54,9 @@ class CouponForm(forms.Form):
             'aria-describedby':'basic-addon2'
         }
     ))
+
+
+class RefundForm(forms.Form):
+    ref_code = forms.CharField()
+    message = forms.CharField(widget =forms.Textarea)
+    email = forms.EmailField()
