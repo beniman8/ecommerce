@@ -5,7 +5,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.utils import timezone
 from .forms import CheckoutForm,CouponForm,RefundForm
-from .models import Item, Order,OrderItem,BillingAddress,Payment,Coupon,Refund
+from .models import Item, Order,OrderItem,Address,Payment,Coupon,Refund
 from django.contrib import messages
 from django.conf import settings
 import random
@@ -64,12 +64,13 @@ class CheckoutView(View):
                 # same_shipping_address = form.cleaned_data.get('same_shipping_address')
                 # save_info = form.cleaned_data.get('save_info')
                 payment_option = form.cleaned_data.get('payment_option')
-                billing_address = BillingAddress(  
+                billing_address = Address(  
                         user=self.request.user,
                         street_address=street_address,
                         apartment_address=apartment_address,
                         country=country,
-                        zip=zip
+                        zip=zip,
+                        address_type='B'
                 )
                 billing_address.save()
                 order.billing_address = billing_address
