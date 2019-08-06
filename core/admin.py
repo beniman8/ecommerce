@@ -45,12 +45,12 @@ class AdressAdmin(admin.ModelAdmin):
                    'apartment_address' ,
                    'country', 
                    'zip' ,
-                   'adress_type' ,
+                   'address_type' ,
                    'default'
                 
 
     ]
-    list_filter = ['adress_type', 
+    list_filter = ['address_type', 
                    'default',
                    'country' ,
 
@@ -61,7 +61,7 @@ class AdressAdmin(admin.ModelAdmin):
                       'apartment_address' ,
                       'country', 
                       'zip' ,
-                      'adress_type' ,
+                      'address_type' ,
                       'default']
 
  
